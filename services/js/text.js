@@ -12,7 +12,7 @@ let subtitle = `BRINDO SERVICIOS INFORMÁTICOS Y TECNOLÓGICOS PROFESIONALES, FL
     <h2 class="midp-font">Soy Fernando Osorio</h2>
     <div class="sm-text">
         <p>
-            Con más de dos años de experiencia en el desarrollo de software,
+            Con más de cuatro años de experiencia en el desarrollo de software,
             mi pasión por la informática ha sido el motor que ha impulsado mi carrera profesional.
             Me considero un entusiasta de la tecnología, siempre en busca de las últimas tendencias y avances en programación,
             ciberseguridad y computación.
@@ -30,5 +30,49 @@ let subtitle = `BRINDO SERVICIOS INFORMÁTICOS Y TECNOLÓGICOS PROFESIONALES, FL
             frameworks y herramientas de seguridad. La ciberseguridad es un campo que me apasiona especialmente, 
             ya que considero que es fundamental para el desarrollo de software seguro y confiable.
         </p>
+    </div>
+`;
+let myskillstitle = `
+    <h2 class="midp-font">HABILIDADES PROFESIONALES</h2>
+    <div class="prof-profile sm-text">
+        <p>
+            Seguridad informática y ciberseguridad; 
+            Python, Java, Javascript, PHP, MySQL, PostgreSQL, MongoDB;
+            CSS, Bootstrap, HTML5, JQuery, Git y GitHub, Angular, NodeJS, Flask, Django,
+            capacidad de trabajo en equipo y metodologías SCRUM.
+        </p>
+    </div>
+    <div class="skill">
+        <div class="logo-lang">
+            <span class="langs" id="python"></span>
+            <span class="langs" id="javascript"></span>
+            <span class="langs" id="php"></span>
+            <span class="langs" id="java"></span>
+            <span class="langs" id="angular"></span>
+            <span class="langs" id="node"></span>
+            <span class="langs" id="flask"></span>
+            <span class="langs" id="django"></span>
+        </div>
+        <div class="graph-container">
+            <div class="main-satat">
+                <span class="mstatA">
+                    <span class="sp-filter"></span>
+                    <span class="mstatB">
+                        <span class="sm-text" id="in-lang"></span>
+                    </span>
+                </span>
+            </div>
+            <div class="p-lang">
+                <span class="stadisticA spA1">
+                    <span class="stadisticB">Manejo</span>
+                </span>
+                <span class="stadisticA spB1">
+                    <span class="stadisticB">Exp.</span>
+                </span>
+                <span class="stadisticA spC1">
+                    <span class="stadisticB">Recursos</span>
+                </span>
+            </div>
+        </div>
     </div>
 `;
