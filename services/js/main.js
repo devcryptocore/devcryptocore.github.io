@@ -1,100 +1,53 @@
 const fecha = new Date();
 let year = fecha.getFullYear();
 $(window).on("load",()=>{
-    $("#loader").fadeOut("slow");
+    $(".langs").each((l,p)=>{
+        let id = $(p).attr("id");
+        $(p).click(()=>{
+            let nlang = [[75,60,78],[90,75,71],[85,85,80],[60,55,48],[78,52,45],[70,50,40],[80,75,82],[73,69,73]];
+            $("#in-lang").text(id);
+            $(".mstatA").css({
+                "background":`conic-gradient(#6dddff 0% ${(nlang[l][0]+nlang[l][1]+nlang[l][2])/3}%,
+                #40119836 ${(nlang[l][0]+nlang[l][1]+nlang[l][2])/3}% 100%)`
+            });
+            $("#in-lang").css({
+                "background":`url(resources/assets/images/svgs/${id}.svg) center 25px / 25px no-repeat`         
+            });
+            $(".spA1").css({"background":`conic-gradient(#6dddff 0% ${nlang[l][0]}%, #40119836 ${nlang[l][0]}% 100%)`});
+            $(".spB1").css({"background":`conic-gradient(#6dddff 0% ${nlang[l][1]}%, #40119836 ${nlang[l][1]}% 100%)`});
+            $(".spC1").css({"background":`conic-gradient(#6dddff 0% ${nlang[l][2]}%, #40119836 ${nlang[l][2]}% 100%)`});
+        });
+    });
 });
 $(document).ready(()=>{
+    $("#loader").fadeOut("slow");
     (function(){
-        let number = Math.floor(Math.random() * (100-50+1))+50;
-        let x = document.querySelector(".main-background");
-        $(".main-background").html(``);
-        for(let i=0;i<number;i++){
-            let span = $("<span></span>").addClass("point");
-            $(".main-background").append(span);
-            $(".point").each((i,e)=>{
-                $(e).css({
-                    "transform":`translate(${Math.random()*(x.offsetWidth-20)}px,${Math.random()*(x.offsetHeight-20)}px)`,
-                    "animation":`bright 15s cubic-bezier(0.075, 0.82, 0.165, 1) ${i}s infinite alternate both running`
-                });
-            });
+        let canvas = document.getElementById('stars_background');
+        let ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (var i = 0; i < 200; i++) {
+            let x = Math.random() * canvas.width;
+            let y = Math.random() * canvas.height;
+            ctx.beginPath();
+            ctx.arc(x, y, 1, 0, Math.PI * 1, true);
+            ctx.fillStyle = '#eee';
+            ctx.fill();
         }
+    }(jQuery));
+    function ax(){
+        $(".langs").each((x,s)=>{
+            console.log(s+" - "+x);
+        });
+    }
+    (function(){
         $("#bfont").text(encabezado);
         $("#mfont").text(subtitle);
         $("#ocontainer").html(opciones);
         $(".d-myprofile").html(my_profile);
         $("#title-cont").html(myskillstitle);
-
-        setTimeout(()=>{
-            $(".motiv").css("animation","positionA 205s linear 1s infinite alternate");
-            $("#motivx").css("animation","positionB 220s linear 1s infinite alternate");
-            $("#motivy").css("animation","positionC 180s linear 1s infinite alternate");
-        },2000);
-
-        $(".langs").each((x,s)=>{
-            let lg = $(s).attr("id");
-            $(s).css({
-                "background":`linear-gradient(0deg, transparent, #40119875),url(resources/assets/images/svgs/${lg}.svg) center no-repeat`,
-                "background-size":"100%,20px"
-            });
-            $(s).mouseover(()=>{
-                let lgs;
-                setTimeout(()=>{
-                    $("#in-lang").css({"transition":"all .3s ease-in-out"});
-                    $("#in-lang").text(lg);
-                },500);
-                let lenguages = {
-                    python: [75,60,78],
-                    javascript: [90,75,71],
-                    php: [85,85,80],
-                    java: [60,55,48],
-                    angular: [78,52,45],
-                    node: [70,50,40],
-                    flask: [80,75,82],
-                    django: [73,69,73]
-                };
-                switch (lg) {
-                    case 'python':
-                        lgs = lenguages.python;
-                        break;
-                    case 'javascript':
-                        lgs = lenguages.javascript;
-                        break;
-                    case 'php':
-                        lgs = lenguages.php;
-                        break;
-                    case 'java':
-                        lgs = lenguages.java;
-                        break;
-                    case 'angular':
-                        lgs = lenguages.angular;
-                        break;
-                    case 'node':
-                        lgs = lenguages.node;
-                        break;
-                    case 'flask':
-                        lgs = lenguages.flask;
-                        break;
-                    case 'django':
-                        lgs = lenguages.django;
-                        break;
-                    default:
-                        break;
-                }
-                $(".spA1",".spB1",".spC1").css({"transition":"all .7s ease-in-out"});
-                setTimeout(()=>{
-                    $("#in-lang").css({
-                        "transition":"all .3s ease-in-out",
-                        "background":`url(resources/assets/images/svgs/${lg}.svg) 50% 20% no-repeat`,
-                        "background-size":"30px"
-                    });
-                    $(".mstatA").css({"background":`conic-gradient(#6dddff 0% ${(lgs[0]+lgs[1]+lgs[2])/3}%, #40119836 ${(lgs[0]+lgs[1]+lgs[2])/3}% 100%)`});
-                    $(".spA1").css({"background":`conic-gradient(#6dddff 0% ${lgs[0]}%, #40119836 ${lgs[0]}% 100%)`});
-                    $(".spB1").css({"background":`conic-gradient(#6dddff 0% ${lgs[1]}%, #40119836 ${lgs[1]}% 100%)`});
-                    $(".spC1").css({"background":`conic-gradient(#6dddff 0% ${lgs[2]}%, #40119836 ${lgs[2]}% 100%)`});
-                },500);
-            });
-        });
-
+        $(".motiv").css("animation","positionA 205s linear 1s infinite alternate");
+        $("#motivx").css("animation","positionB 220s linear 1s infinite alternate");
+        $("#motivy").css("animation","positionC 180s linear 1s infinite alternate");
     }(jQuery));
 
     (function(){
@@ -102,17 +55,10 @@ $(document).ready(()=>{
             $(elem).click(()=>{
                 console.log(ind)
                 $(".option").removeClass("active-option");
-                $(elem).css({"animation":"unset"});
                 $(elem).addClass("active-option");
                 $("html,body").animate({
                     scrollTop: $(`#source_${ind}`).offset().top
                 },1000);
-            });
-            $(elem).mouseover(()=>{
-                $(elem).css({"animation":"onhover .5s both","color":"#6dddff"});
-                $(elem).mouseleave(()=>{
-                    $(elem).css({"animation":"outhover .5s both","color":"#eee"});
-                });
             });
         });
     }(jQuery));
@@ -149,7 +95,6 @@ $(document).ready(()=>{
         }
         $(".option").each((ind,elem)=>{
             $(elem).click(()=>{
-                console.log(ind)
                 $(".option").removeClass("active-option");
                 $(elem).css({"animation":"unset"});
                 $(elem).addClass("active-option");
@@ -160,7 +105,7 @@ $(document).ready(()=>{
                     $("html,body").animate({
                         scrollTop: $(`#source_${ind}`).offset().top-80
                     },700);
-                },900);
+                },600);
             });
             $(elem).mouseover(()=>{
                 $(elem).css({"animation":"onhover .5s both","color":"#6dddff"});
