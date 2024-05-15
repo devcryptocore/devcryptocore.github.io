@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cryptocore</title>
+    <meta name="description" content="Esta es la página de perfil de Fernando Osorio, en ella se muestra su perfil profesional, habilidades, contacto y proyectos desarrollados.">
+    <meta name="theme-color" content="#110f25">
+    <title>Cryptocore | Fernando Osorio</title>
+    <link rel="manifest" href="manifest.json">
     <link rel="shortcut icon" href="resources/assets/images/favicon2.ico" type="image/x-icon">
     <link rel="stylesheet" href="services/css/main-style.css">
     <script src="services/js/jquery.min.js"></script>
@@ -13,16 +16,18 @@
     <script src="services/js/app.js"></script>
 </head>
 <body>
-    <div id="loader"></div>
+    <div id="loader">
+        <span class="spin-load"></span>
+    </div>
     <div class="main-container">
+        <canvas class="main-background" id="stars_background" width="1300" height="1600"></canvas>
         <span class="motiv"></span>
         <span id="motivx"></span>
         <span id="motivy"></span>
-        <div class="main-background"></div>
         <div class="mobile-options-container" id="mcontainer"></div>
         <div class="nav-bar">
             <div class="name-container">
-                <img class="logotipo" src="resources/assets/images/icon2.png" alt="Cryptocore logo">
+                <img class="logotipo" src="resources/assets/images/icon248.webp" alt="Cryptocore logo">
                 <span class="nombre">Cryptocore</span>
             </div>
             <span class="open-menu-button"></span>
@@ -37,7 +42,7 @@
                 <div class="ball" id="content">
                     <span class="sub-ball"></span>
                 </div>
-                <img class="main-img" src="resources/assets/images/brain.png" alt="intel-brain">
+                <img class="main-img" src="resources/assets/images/brainbx.webp" alt="intel-brain">
             </div>
         </div>
         <div class="source" id="source_1">
@@ -46,7 +51,7 @@
                 <div class="ph-container">
                     <div class="spins"></div>
                     <div class="photo-container">
-                        <img src="resources/assets/images/profile-photo.png" alt="Profile photo" class="profile-photo">
+                        <img src="resources/assets/images/profile-photo.webp" alt="Profile photo" class="profile-photo">
                     </div>
                 </div>
                 <div class="d-myprofile"></div>
@@ -58,13 +63,13 @@
             </div>
         </div>
         <div class="source" id="source_2">
-            <h1 class="big-font">En construcción</h1>
+            <h1 class="big-font">Proyectos</h1>
         </div>
         <div class="source" id="source_3">
-            <h1 class="big-font">En construcción</h1>
+            <h1 class="big-font">Contacto</h1>
         </div>
         <div class="source" id="source_4">
-            <h1 class="big-font">En construcción</h1>
+            <h1 class="big-font">Social</h1>
         </div>
     </div>
 </body>
