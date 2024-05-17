@@ -487,7 +487,7 @@ img {
     width: 30px;
     height: 30px;
     border-radius: 10px;
-    background: linear-gradient(0deg, transparent, #40119875),url(../../resources/assets/images/svgs/social.svg) center / 100%,20px no-repeat;
+    background: linear-gradient(0deg, transparent, #40119875),url(../../resources/assets/images/svgs/social.svg) center / 20px no-repeat;
     box-shadow: 6px 5px 11px 0px #000000b8;
     position: absolute;
     top: 25px;
@@ -751,8 +751,8 @@ img {
     align-items: flex-start;
 }
 .whatsapp-box {
-    width: 80%;
-    height: 90%;
+    width: 65%;
+    height: 95%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -916,6 +916,9 @@ img {
         justify-content: flex-start;
         margin-bottom: 17rem;
     }
+    #source_3 {
+        margin-top: 80px;
+    }
     #proj {
         align-items: center;
     }
@@ -951,12 +954,18 @@ img {
     #source_1 .side-left {
         width: 90%;
     }
+    #source_3 .side-left {
+        height: 100vh;
+    }
     #source_1 {
         margin-bottom: 28rem;
     }
     #title-cont {
         width: 95%;
         height: 100vh;
+    }
+    .whatsapp-box {
+        width: 90%;
     }
     .logo-lang {
         margin: 20px;
