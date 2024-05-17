@@ -25,6 +25,7 @@ $(window).on("load",()=>{
 });
 $(document).ready(()=>{
     $("#loader").fadeOut("slow");
+    const esmovil = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     (function(){
         let canvas = document.getElementById('stars_background');
         let ctx = canvas.getContext('2d');
@@ -159,9 +160,14 @@ $(document).ready(()=>{
             $(".spinx").css({"display":"flex"});
         },300);
         setTimeout(()=>{
-           location.href=`
-            https://web.whatsapp.com/send/?phone=%2B573106574835&text=%0A%E2%9C%AA+%2ANombre%3A%2A++_${name}_%0A%0A%E2%9C%AA+%2AN%C3%BAmero+de+tel%C3%A9fono%3A%2A++_${tel}_%0A%0A%E2%9C%AA+${text}%0A%0A%E2%9C%AA+%2AEl+${day}+/+${mes}+/+${year}+a+las+${hour}:${minutes}%2A%0A%0A%0A%0A%C2%A9Cryptocore+2024&type=phone_number&app_absent=0
-            `;
+            if(esmovil){
+                location.href=`
+                    https://wa.me/+573106574835?text=✪%20*Nombre:*%20%20_${name}_%0A%0A✪%20*Número%20de%20teléfono:*%20%20_${tel}_%0A%0A✪%20${text}%0A%0A*✪%20El%20${day}/${mes}/${year}%20a%20las%20${hour}:${minutes}*%0A%0A%0A%0A©Cryptocore%20${year}
+                `;
+            }
+            else {
+                location.href=`https://web.whatsapp.com/send/?phone=%2B573106574835&text=%0A%E2%9C%AA+%2ANombre%3A%2A++_${name}_%0A%0A%E2%9C%AA+%2AN%C3%BAmero+de+tel%C3%A9fono%3A%2A++_${tel}_%0A%0A%E2%9C%AA+${text}%0A%0A%E2%9C%AA+%2AEl+${day}+/+${mes}+/+${year}+a+las+${hour}:${minutes}%2A%0A%0A%0A%0A%C2%A9Cryptocore+2024&type=phone_number&app_absent=0`;location.href=`https://web.whatsapp.com/send/?phone=%2B573106574835&text=%0A%E2%9C%AA+%2ANombre%3A%2A++_${name}_%0A%0A%E2%9C%AA+%2AN%C3%BAmero+de+tel%C3%A9fono%3A%2A++_${tel}_%0A%0A%E2%9C%AA+${text}%0A%0A%E2%9C%AA+%2AEl+${day}+/+${mes}+/+${year}+a+las+${hour}:${minutes}%2A%0A%0A%0A%0A%C2%A9Cryptocore+2024&type=phone_number&app_absent=0`;
+            }          
         },3000);
     })
 });
