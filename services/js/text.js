@@ -76,3 +76,177 @@ let myskillstitle = `
         </div>
     </div>
 `;
+let intro_projects =  `
+    <div class="prof-profile sm-text">
+        <p>
+            En mi trayectoria como programador, me he propuesto a construir una variedad de proyectos,
+            los cuales han implicado la aplicación y el aprendizaje de distintas habilidades en torno
+            al desarrollo de software. Estos proyectos me han permitido comprender y perfeccionar los
+            métodos utilizados para conseguir estructurar y construir a cabalidad dichos proyectos.
+            A continuaciín presento algunos de ellos:
+        </p>
+    </div>
+`;
+let projects = `
+    <div class="project">
+        <span class="logotype" style="background:url(resources/assets/images/Proyectos/sirvi.webp) center / cover no-repeat,
+        linear-gradient(45deg, #67b4eb88,#120782cf);"></span>
+        <h2 class="sproj">S.I.R.V.I</h2>
+        <div class="used-technologies-logo">
+            <span class="used-tech" id="php"></span>
+            <span class="used-tech" id="javascript"></span>
+            <span class="used-tech" id="jquery"></span>
+            <span class="used-tech" id="mysql"></span>
+            <span class="used-tech" id="html"></span>
+            <span class="used-tech" id="css"></span>
+        </div>
+        <span class="stext">
+            El Sistema Inteligente de Registro para Ventas e Inventario, SIRVI, es un sistema dinámico e
+            intuitivo que permite gestionar y administrar de manera precisa las actividades comerciales
+            y locales de un negocio o empresa, incluye sistema POS, gestión de sucursales, gestión de clientes
+            y muchas funciones mas.
+        </span>
+        <button class="readmore">Conocer más</button>
+    </div>
+    <div class="project">
+        <span class="logotype" style="background:url(resources/assets/images/Proyectos/EasyParking.webp) center / cover no-repeat,
+        linear-gradient(45deg, #67b4eb88,#120782cf);"></span>
+        <h2 class="sproj">Easy Parking</h2>
+        <div class="used-technologies-logo">
+            <span class="used-tech" id="python"></span>
+            <span class="used-tech" id="flask"></span>
+            <span class="used-tech" id="javascript"></span>
+            <span class="used-tech" id="jquery"></span>
+            <span class="used-tech" id="mysql"></span>
+            <span class="used-tech" id="html"></span>
+            <span class="used-tech" id="css"></span>
+        </div>
+        <span class="stext">
+            Easy Parking es un sistema que gestiona y organiza las operaciones de su negocio de parking; 
+            simplificando la manera en que se lleva el control de plazas disponibles, 
+            acciones de facturación, trazabilidad diaria de ingreso de vehículos y estructura 
+            financiera con sistema de ingresos y egresos.
+        </span>
+        <button class="readmore">Conocer más</button>
+    </div>
+    <div class="project">
+        <span class="logotype" style="background:url(resources/assets/images/Proyectos/chatmast.webp) center / cover no-repeat,
+        linear-gradient(45deg, #67b4eb88,#120782cf);"></span>
+        <h2 class="sproj">Chatmaster</h2>
+        <div class="used-technologies-logo">
+            <span class="used-tech" id="javascript"></span>
+            <span class="used-tech" id="node"></span>
+            <span class="used-tech" id="html"></span>
+            <span class="used-tech" id="css"></span>
+        </div>
+        <span class="stext">
+            Chatmaster es un software de chat abierto y directo en tiempo real,
+            este software cuenta con cifrado entre usuarios, el cual consta de
+            mensajes encriptados con una key que solo el remitente y el receptor
+            poseen, además permite crear canales y comunidades de chat con perfiles anónimos
+            y seguros. 
+        </span>
+        <button class="readmore">Conocer más</button>
+    </div>
+    <div class="project">
+        <span class="logotype" style="background:url(resources/assets/images/Proyectos/smartbar.webp) center / cover no-repeat,
+        linear-gradient(45deg, #67b4eb88,#120782cf);"></span>
+        <h2 class="sproj">Smart-Bar</h2>
+        <div class="used-technologies-logo">
+            <span class="used-tech" id="php"></span>
+            <span class="used-tech" id="javascript"></span>
+            <span class="used-tech" id="jquery"></span>
+            <span class="used-tech" id="mysql"></span>
+            <span class="used-tech" id="html"></span>
+            <span class="used-tech" id="css"></span>
+        </div>
+        <span class="stext">
+            Chatmaster es un software de chat abierto y directo en tiempo real,
+            este software cuenta con cifrado entre usuarios, el cual consta de
+            mensajes encriptados con una key que solo el remitente y el receptor
+            poseen, además permite crear canales y comunidades de chat con perfiles anónimos
+            y seguros. 
+        </span>
+        <button class="readmore">Conocer más</button>
+    </div>
+    <div class="project">
+        <span class="logotype" style="background:url(resources/assets/images/Proyectos/bingo.webp) center / cover no-repeat,
+        linear-gradient(45deg, #67b4eb88,#120782cf);"></span>
+        <h2 class="sproj">Happy Bingo</h2>
+        <div class="used-technologies-logo">
+            <span class="used-tech" id="php"></span>
+            <span class="used-tech" id="javascript"></span>
+            <span class="used-tech" id="jquery"></span>
+            <span class="used-tech" id="mysql"></span>
+            <span class="used-tech" id="html"></span>
+            <span class="used-tech" id="css"></span>
+        </div>
+        <span class="stext">
+            Este software es el típico juego de bingo, con la particularidad de que
+            su entorno es netamente virtual, tantopara el proceso de generar cartones de juego
+            como para el desarrollo del mismo en si, eligiendo números de manera aleatoria entre
+            1 y 75, permitiendo también múltiples modos de juego.
+        </span>
+        <button class="readmore">Conocer más</button>
+    </div>
+    <div class="project">
+        <span class="logotype" style="background:url(resources/assets/images/Proyectos/gestempleados.svg) center / cover no-repeat,
+        linear-gradient(45deg, #67b4eb88,#120782cf);"></span>
+        <h2 class="sproj">G-Empleados</h2>
+        <div class="used-technologies-logo">
+            <span class="used-tech" id="php"></span>
+            <span class="used-tech" id="javascript"></span>
+            <span class="used-tech" id="jquery"></span>
+            <span class="used-tech" id="mysql"></span>
+            <span class="used-tech" id="html"></span>
+            <span class="used-tech" id="css"></span>
+        </div>
+        <span class="stext">
+            G-Empleados es un software completo que sirve para la gestión de empleados,
+            el sistema incluye entre su gran variedad de funciones, sus respectivos procesos
+            de identificación de empleados, control de horario, generación de carnet de acceso,
+            lector de códigos QR, calculadora de nómina y muchas características más. 
+        </span>
+        <button class="readmore">Conocer más</button>
+    </div>
+    <div class="project">
+        <span class="logotype" style="background:url(resources/assets/images/Proyectos/jager.webp) center / cover no-repeat,
+        linear-gradient(45deg, #67b4eb88,#120782cf);"></span>
+        <h2 class="sproj">JAGER</h2>
+        <div class="used-technologies-logo">
+            <span class="used-tech" id="python"></span>
+            <span class="used-tech" id="bash"></span>
+            <span class="used-tech" id="php"></span>
+            <span class="used-tech" id="javascript"></span>
+            <span class="used-tech" id="jquery"></span>
+            <span class="used-tech" id="html"></span>
+            <span class="used-tech" id="css"></span>
+        </div>
+        <span class="stext">
+            JAGER es una herramienta diseñada para ciberseguridad, la cual permite
+            obtener la ubicación exacta de un dispositivo mediante la interacción
+            de dispositivos mediante transacciones HTTP.
+            Este software permite obtener los datos de ubicación de un dispositivo
+            mediante ingeniería social en tiempo real.
+        </span>
+        <button class="readmore">Conocer más</button>
+    </div>
+    <div class="project">
+        <span class="logotype" style="background:url(resources/assets/images/Proyectos/encrypt.svg) center / cover no-repeat,
+        linear-gradient(45deg, #67b4eb88,#120782cf);"></span>
+        <h2 class="sproj">Encryptor</h2>
+        <div class="used-technologies-logo">
+            <span class="used-tech" id="javascript"></span>
+            <span class="used-tech" id="jquery"></span>
+            <span class="used-tech" id="html"></span>
+            <span class="used-tech" id="css"></span>
+        </div>
+        <span class="stext">
+            Esta es una sencilla pero poderosa herramienta, cuya función es 
+            encriptar y proteger el código HTML y Javascrip que se le asigne,
+            su funcionamiento se basa en la ofuscación efectíva de código
+            mediante librerías nativas de Javascript.
+        </span>
+        <button class="readmore">Conocer más</button>
+    </div>
+`;
