@@ -1,4 +1,8 @@
 const fecha = new Date();
+let minutes = fecha.getMinutes();
+let hour = fecha.getHours();
+let day = fecha.getDay();
+let mes = fecha.getMonth();
 let year = fecha.getFullYear();
 $(window).on("load",()=>{
     $(".langs").each((l,p)=>{
@@ -25,7 +29,7 @@ $(document).ready(()=>{
         let canvas = document.getElementById('stars_background');
         let ctx = canvas.getContext('2d');
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (var i = 0; i < 200; i++) {
+        for (var i = 0; i < 100; i++) {
             let x = Math.random() * canvas.width;
             let y = Math.random() * canvas.height;
             ctx.beginPath();
@@ -45,6 +49,8 @@ $(document).ready(()=>{
         $("#ocontainer").html(opciones);
         $(".d-myprofile").html(my_profile);
         $("#title-cont").html(myskillstitle);
+        $(".rec-text").html(intro_projects);
+        $(".cards").html(projects);
         $(".motiv").css("animation","positionA 205s linear 1s infinite alternate");
         $("#motivx").css("animation","positionB 220s linear 1s infinite alternate");
         $("#motivy").css("animation","positionC 180s linear 1s infinite alternate");
@@ -53,7 +59,6 @@ $(document).ready(()=>{
     (function(){
         $(".option").each((ind,elem)=>{
             $(elem).click(()=>{
-                console.log(ind)
                 $(".option").removeClass("active-option");
                 $(elem).addClass("active-option");
                 $("html,body").animate({
@@ -61,11 +66,17 @@ $(document).ready(()=>{
                 },1000);
             });
         });
+        $(".used-tech").each((c,x)=>{
+            let lng = $(x).attr("id");
+            $(x).css({
+                "background":`url(resources/assets/images/svgs/${lng}.svg) center / 20px no-repeat,linear-gradient(45deg, #67b4eb51,#110f25cf)`
+            });
+        });
     }(jQuery));
 
     //scroll control
     $(window).on("scroll",()=>{
-        let mark = 0;
+        let marks = 0;
         let tp = $(window).scrollTop();
         $(".source").each((index,elemento)=>{
             let elem = $(`#source_${index}`).offset().top-300;
@@ -122,5 +133,35 @@ $(document).ready(()=>{
             },900);
         });
     });
-
+    $("#user_text").keyup(()=>{
+        let utext = $("#user_text").val();
+        utext = utext.length;
+        let chars = 130-utext;
+        if(chars <= 10){
+            $("#maxchar").css({"color":"#c5005c","font-weight":"600"});
+        }
+        else {
+            $("#maxchar").css({"color":"#6dddff"});
+        }
+        $("#maxchar").text(chars);
+        if(chars == 130){
+            $("#maxchar").text("");
+        }
+    });
+    $("#send-form").on("submit",(e)=>{
+        e.preventDefault();
+        let name = $("#user_name").val();
+        let tel = $("#user_tel").val();
+        let text = $("#user_text").val();
+        $(".ennv").css({"opacity":"0"});
+        $(".ennv").attr("disabled","true");
+        setTimeout(()=>{
+            $(".spinx").css({"display":"flex"});
+        },300);
+        setTimeout(()=>{
+           location.href=`
+            https://web.whatsapp.com/send/?phone=%2B573106574835&text=%0A%E2%9C%AA+%2ANombre%3A%2A++_${name}_%0A%0A%E2%9C%AA+%2AN%C3%BAmero+de+tel%C3%A9fono%3A%2A++_${tel}_%0A%0A%E2%9C%AA+${text}%0A%0A%E2%9C%AA+%2AEl+${day}+/+${mes}+/+${year}+a+las+${hour}:${minutes}%2A%0A%0A%0A%0A%C2%A9Cryptocore+2024&type=phone_number&app_absent=0
+            `;
+        },3000);
+    })
 });
