@@ -20,6 +20,8 @@ $(window).on("load",()=>{
             $(".spA1").css({"background":`conic-gradient(#6dddff 0% ${nlang[l][0]}%, #40119836 ${nlang[l][0]}% 100%)`});
             $(".spB1").css({"background":`conic-gradient(#6dddff 0% ${nlang[l][1]}%, #40119836 ${nlang[l][1]}% 100%)`});
             $(".spC1").css({"background":`conic-gradient(#6dddff 0% ${nlang[l][2]}%, #40119836 ${nlang[l][2]}% 100%)`});
+            $("#txb1").text("Manejo");
+            $("#txb2").text("Exper.");
         });
     });
 });
@@ -39,11 +41,6 @@ $(document).ready(()=>{
             ctx.fill();
         }
     }(jQuery));
-    function ax(){
-        $(".langs").each((x,s)=>{
-            console.log(s+" - "+x);
-        });
-    }
     (function(){
         $("#bfont").text(encabezado);
         $("#mfont").text(subtitle);
@@ -80,7 +77,7 @@ $(document).ready(()=>{
         let marks = 0;
         let tp = $(window).scrollTop();
         $(".source").each((index,elemento)=>{
-            let elem = $(`#source_${index}`).offset().top-300;
+            let elem = $(`#source_${index}`).offset().top-500;
             if(tp >= elem){
                 $(elemento).removeClass("active-source");
                 $(`.option`).removeClass("active-option");
@@ -94,6 +91,9 @@ $(document).ready(()=>{
         });
     });
     let mark = 0;
+    $(".go-more").click(()=>{
+        $("#option_3").click();
+    });
     $(".open-menu-button").click((e)=>{
         if(mark == 0){
             $("#mcontainer").css({"animation":"left-in .5s linear .1s both"});
@@ -171,3 +171,35 @@ $(document).ready(()=>{
         },3000);
     })
 });
+
+let inmark = 0;
+function next(e) {
+    if(inmark == 6){
+        $(e).css("display","none");
+    }
+    if(inmark <= 6){
+        $(`#p_${inmark+1}`).css("display","flex");
+        $(`#p_${inmark+1}`).css({"animation":"right-in .5s linear both"});
+        $(`#p_${inmark}`).css("display","none");
+        $("#leftarrow").css("display","flex");
+        inmark++;      
+    }
+    else {
+        $(e).css("display","none");
+    }
+}
+function back(e){
+    if(inmark == 1){
+        $(e).css("display","none");
+    }
+    if(inmark >= 0){
+        $(`#p_${inmark-1}`).css("display","flex");
+        $(`#p_${inmark-1}`).css({"animation":"left-in .5s linear both"});
+        $(`#p_${inmark}`).css("display","none");
+        $("#rightarrow").css("display","flex");
+        inmark--;
+    }
+    else {
+        $(e).css("display","flex");
+    }
+}
