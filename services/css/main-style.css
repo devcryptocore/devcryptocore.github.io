@@ -97,7 +97,7 @@
 	width: 10px;
 }
 ::-webkit-scrollbar-track {
-	background: #ffffff00;
+	background: #1c1843;
 }
 ::-webkit-scrollbar-thumb {
 	background: linear-gradient(45deg, #6da5ff,#6dddff,#6dacff);
@@ -111,10 +111,15 @@
     font-family: Montserrat;
     user-select: none;
 }
+html, body {
+    touch-action: none;
+    -ms-touch-action: none;
+}
+  
 body {
     margin: 0;
     padding: 0;
-    background: var(--fondo);
+    background: radial-gradient(#020016, #252152);
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
