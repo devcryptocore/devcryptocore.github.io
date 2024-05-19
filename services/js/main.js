@@ -49,6 +49,8 @@ $(document).ready(()=>{
         $("#title-cont").html(myskillstitle);
         $(".rec-text").html(intro_projects);
         $(".cards").html(projects);
+        $(".im-cont").html(contacters);
+        $("#source_4").html(my_social);
         $(".motiv").css("animation","positionA 205s linear 1s infinite alternate");
         $("#motivx").css("animation","positionB 220s linear 1s infinite alternate");
         $("#motivy").css("animation","positionC 180s linear 1s infinite alternate");
@@ -69,6 +71,13 @@ $(document).ready(()=>{
             $(x).css({
                 "background":`url(resources/assets/images/svgs/${lng}.svg) center / 20px no-repeat,linear-gradient(45deg, #67b4eb51,#110f25cf)`
             });
+        });
+    }(jQuery));
+
+    (function(){
+        $(".social-button").each((s,m)=>{
+            let idt = $(m).attr("id");
+            $(m).css({"background-image":`url(resources/assets/images/svgs/${idt}.svg)`});
         });
     }(jQuery));
 
@@ -202,4 +211,7 @@ function back(e){
     else {
         $(e).css("display","flex");
     }
+}
+function source(s){
+    location.href=s;
 }
