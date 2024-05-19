@@ -248,13 +248,13 @@ let contacters = `
     </div>
     <div class="impox">
         <div class="pox-cont">
-            <img src="resources/assets/images/Proyectos/capture1.webp" class="cap1">
+            <img src="resources/assets/images/Proyectos/capture1.webp" class="cap1" alt="sirvi-screenshot">
             <div class="pox">
                 <span class="pox-text">Software inteligente y multipropósito</span>
             </div>
         </div>
         <div class="pox-cont">
-            <img src="resources/assets/images/Proyectos/capture2.webp" class="cap2">
+            <img src="resources/assets/images/Proyectos/capture2.webp" class="cap2" alt="sirvi-screenshot">
             <div class="pox ri">
                 <span class="pox-text">Diseño profesional proyectado a la comodidad del usuario</span>
             </div>
