@@ -1,0 +1,348 @@
+:root {
+    --green: #cef951;
+    --grey: #262626;
+    --dark-grey: #151515;
+    --white: #ffffff;
+}
+@font-face {
+    font-family: Alexana;
+    src: url(Alexana.ttf);
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(Montserrat.ttf);
+}
+@font-face {
+    font-family: Linel;
+    src: url(LineIcons.ttf);
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #262626;
+    font-family: Montserrat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.headerx {
+    width: 100%;
+    height: 30vh;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+.headerx .div1 {
+    grid-area: 1 / 1 / 3 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.headerx .div2 {
+    grid-area: 3 / 1 / 6 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+.headerx .div3 {
+    grid-area: 1 / 3 / 6 / 6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.div1 img {
+    width: 10%;
+    aspect-ratio: 1/1;
+}
+.div1 h2 {
+    font-size: 1.4em;
+    font-family: Alexana;
+    color: var(--green);
+    font-weight: 100;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.div1 h2::after {
+    content: "DEVELOPMENT & TECHNOLOGY";
+    font-family: Montserrat;
+    font-size: 7px;
+    position: absolute;
+    bottom: -5px;
+    letter-spacing: 3px;
+}
+.div2 h2 {
+    font-size: 1.1em;
+    font-weight: 100;
+    color: var(--white);
+    padding: 10px 0px 10px 40px;
+    border-left: 5px solid var(--green);
+    margin-left: 20px;
+}
+.spcont {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0px 30px;
+    gap: 10px;
+    clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+    background: var(--green);
+}
+.marks ul li {
+    font-size: 13px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+.marks ul li::marker {
+    content: "✔  ";
+    color: #262626;
+}
+.mband {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark-grey);
+}
+.mband span {
+    font-size: 15px;
+    color: var(--white);
+}
+.bodyx {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+.card {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    margin-bottom: 2rem;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.25rem;
+    background-color: var(--dark-grey);
+    padding: 1.5rem;
+}
+.card-header {
+    display: flex;
+    flex-direction: column;
+}
+.card-title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    color: var(--white);
+}
+.card-price {
+    font-size: 2.5rem;
+    line-height: 1;
+    font-weight: 700;
+    color: var(--green);
+}
+.desc {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.625;
+    color: var(--white);
+    font-size: 13px;
+}
+.desc b {
+    color: var(--green);
+}
+.lists {
+    margin-bottom: 1.5rem;
+    flex: 1 1 0%;
+    color: #9ca3af;
+    padding: 0;
+    font-size: 12px;
+    position: relative;
+    overflow: hidden;
+    max-height: 150px;
+}
+.lists.expanded {
+    max-height: none;
+}
+.hidden-item {
+    display: none;
+}
+.lists:not(.expanded) li:nth-child(6) {
+    position: relative;
+}
+.lists:not(.expanded) li:nth-child(6)::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: linear-gradient(to bottom, #ffffff00, #151515);
+    pointer-events: none;
+}
+.more-btn {
+    background: none;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+    padding: 5px 10px;
+    transform: translateY(-10px);
+}
+.more-btn:hover {
+    text-decoration: underline;
+}
+.lists .list {
+    margin-bottom: 0.5rem;
+    display: flex;
+    margin-left: 0.5rem
+}
+.action {
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    display: inline-block;
+    border-radius: 0.25rem;
+    background-color: var(--green);
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--grey);
+    cursor: pointer;
+}
+.okicon {
+    width: 20px;
+    aspect-ratio: 1/1;
+    margin-right: 10px;
+}
+.module2 {
+    background-color: var(--green);
+}
+.module2 .div3 .spcont {
+    background: var(--grey);
+    color: var(--white);
+}
+.module2 .div3 .spcont .marks ul li::marker {
+    color: #cef951;
+}
+.second-module {
+    flex-direction: column;
+    gap: 0 !important;
+}
+.second-module h2 {
+    margin: 0 0 5px 20px;
+    color: var(--grey);
+    border-left: 5px solid var(--dark-grey);
+}
+.second-module span {
+    color: var(--dark-grey);
+}
+.faccard {
+    position: relative;
+}
+.faccard::before {
+    content: "REQUIERE PLAN BASE";
+    text-align: center;
+    color: #262626;
+    background: var(--green);
+    position: absolute;
+    top: 0;
+    right: -10px;
+    padding: 5px 20px;
+    border-radius: 0px 10px 5px 0px;
+    box-shadow: inset -5px 0px 6px 0 #00000082;
+    font-size: 13px;
+    font-weight: 600;
+}
+.footerx {
+    width: 100%;
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--dark-grey);
+}
+.footerx span {
+    color: var(--white);
+    font-size: 12px;
+}
+.footerx span a {
+    text-decoration: none;
+    color: var(--green);
+    font-size: 12px;
+}
+@media screen and (max-width: 600px) {
+    .headerx {
+        height: 80vh;
+    }
+    .headerx .div1 {
+        grid-area: 1 / 1 / 2 / 6;
+    }
+    .headerx .div2 {
+        grid-area: 2 / 1 / 4 / 6;
+    }
+    .headerx .div3 {
+        grid-area: 4 / 1 / 6 / 6;
+    }
+    .div2 h2 {
+        font-size: 1.1em;
+        padding: 10px 0px 10px 30px;
+    }
+    .spcont {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        justify-content: space-around;
+        gap: 0;
+        padding: 10px;
+    }
+    .marks ul {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .marks ul li {
+        font-size: 10px;
+        margin: 0;
+    }
+    .mband {
+        padding: 15px;
+    }
+    .mband span {
+        font-size: 12px;
+        text-align: center;
+    }
+    .bodyx {
+        gap: 2px;
+    }
+}
