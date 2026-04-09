@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fernando Osorio - Software Engineer con 5+ años de experiencia en desarrollo Full Stack, automatización empresarial e integraciones API.">
+    <meta name="keywords" content="Software Engineer, Full Stack Developer, ERP, API Integration, Flutter, Linux, Networking">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Cryptocore" />
+    <meta property="og:description" content="Fernando Osorio - Software Engineer | Perfil profesional" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/devcryptocore/devcryptocore.github.io/refs/heads/main/spash.webp" />
+    <meta property="og:image:width" content="1024" />
+    <meta property="og:image:height" content="632" />
+    <meta property="og:url" content="https://devcryptocore.github.io" />
+    <meta property="og:site_name" content="Cryptocore" />
+    <meta property="fb:app_id" content="368569449013481" />
+    <meta name="author" content="Fernando Osorio">
+    <title>Fernando Osorio | Software Engineer</title>
+    <link rel="shortcut icon" href="resources/assets/images/proto.ico" type="image/x-icon">
+
+    <!-- Preload crítico -->
+    <link rel="preload" href="resources/assets/fonts/GothicExpanded.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="resources/assets/fonts/Montserrat.ttf" as="font" type="font/ttf" crossorigin>
+
+    <!-- Estilos -->
+    <link class="versionized" rel="stylesheet" href="resources/css/stylex.css">
+    <link class="versionized" rel="stylesheet" href="resources/css/animations.css">
+    <link rel="stylesheet" href="resources/css/aos.css">
+
+    <!-- Three.js Import Map (debe ir antes de los módulos) -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "./resources/js/build/three.module.js",
+            "three/addons/": "./resources/js/jsm/"
+        }
+    }
+    </script>
+
+    <!-- Scripts: orden correcto — dependencias primero, main al final con defer -->
+    <script src="resources/js/jquery.min.js" defer></script>
+    <script src="resources/js/gsap.min.js" defer></script>
+    <script src="resources/js/ScrollTrigger.min.js" defer></script>
+    <script src="resources/js/lenis.js" defer></script>
+    <script src="resources/js/aos.js" defer></script>
+    <script class="versionized" src="resources/js/main.js" defer></script>
+    <script type="module" src="resources/js/model.js"></script>
+</head>
+<body>
+    <!-- ========== NAVBAR ========== -->
+    <nav class="DesktopNavBar" role="navigation" aria-label="Navegación principal">
+        <div class="side-navBar logoContainer">
+            <img src="resources/assets/images/ccorelogo128.webp" alt="Cryptocore Logo" data-aos="fade-right" data-aos-delay="100" width="50" height="50">
+            <h1 class="ccoreName" data-aos="fade-right" data-aos-delay="200">CRYPTOCORE</h1>
+        </div>
+        <div class="side-navBar linkContainer">
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="sourceContainer" id="nav-menu" data-aos="fade-down" data-aos-delay="200">
+                <a href="#inicio" aria-current="page">Inicio</a>
+                <a href="#sobre-mi">Sobre Mí</a>
+                <a href="#habilidades">Habilidades</a>
+                <a href="#experiencia">Experiencia</a>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+        </div>
+    </nav>
+    <div class="sourceContainer" id="nav-menu-mobile" data-aos="fade-down" data-aos-delay="200">
+        <a href="#inicio" aria-current="page">Inicio</a>
+        <a href="#sobre-mi">Sobre Mí</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
+    </div>
+
+    <!-- ========== CONTENIDO PRINCIPAL ========== -->
+    <main class="container">
+
+        <!-- ----- SECCIÓN HERO ----- -->
+        <section id="inicio" class="page_section hero-section first-section" data-aos="fade-up">
+            <div class="tag">
+                <img src="resources/assets/images/svgs/forma1.svg" alt="Decoración" class="forma" loading="lazy">
+            </div>
+
+            <div class="media-icons-container">
+                <a href="#" aria-label="Facebook" data-aos="fade-up" data-aos-delay="200" data-aos-offset="0">
+                    <img src="resources/assets/images/svgs/facebook-logo.svg" alt="Facebook">
+                </a>
+                <a href="#" aria-label="TikTok" data-aos="fade-up" data-aos-delay="350" data-aos-offset="0">
+                    <img src="resources/assets/images/svgs/instagram-logo.svg" alt="Instagram">
+                </a>
+                <a href="#" aria-label="Instagram" data-aos="fade-up" data-aos-delay="500" data-aos-offset="0">
+                    <img src="resources/assets/images/svgs/whatsapp-logo.svg" alt="WhatsApp">
+                </a>
+                <a href="#" aria-label="Telegram" data-aos="fade-up" data-aos-delay="650" data-aos-offset="0">
+                    <img src="resources/assets/images/svgs/telegram-logo.svg" alt="Telegram">
+                </a>
+                <a href="#" aria-label="WhatsApp" data-aos="fade-up" data-aos-delay="800" data-aos-offset="0">
+                    <img src="resources/assets/images/svgs/tiktok-logo.svg" alt="TikTok">
+                </a>
+                <a href="#" aria-label="LinkedIn" data-aos="fade-up" data-aos-delay="950" data-aos-offset="0">
+                    <img src="resources/assets/images/svgs/linkedin-logo.svg" alt="LinkedIn">
+                </a>
+            </div>
+
+            <div class="title-sect" id="sect-title">
+                <h1 class="ini-text" id="lefttext">SOFT</h1>
+                <div id="canvas-cont">
+                    <canvas id="canvas"></canvas>
+                </div>
+                <h1 class="ini-text" id="righttext">WARE</h1>
+            </div>
+        </section>
+
+        <!-- ----- SECCIÓN SOBRE MÍ ----- -->
+        <section id="sobre-mi" class="page_section" data-aos="fade-up">
+            <div class="about-content">
+                <div class="about-text">
+                    <span class="about-label" data-aos="fade-right">Software Engineer</span>
+                    <h2 class="about-title" data-aos="fade-right" data-aos-delay="100">
+                        Transformando ideas en <span>soluciones escalables</span>
+                    </h2>
+                    <p class="about-description" data-aos="fade-right" data-aos-delay="200">
+                        Con más de 5 años de experiencia diseñando, desarrollando y desplegando sistemas listos para producción.
+                        Me especializo en desarrollo Full Stack, automatización empresarial e integraciones API,
+                        con una sólida base en redes e infraestructura Linux.
+                    </p>
+                    <p class="about-description" data-aos="fade-right" data-aos-delay="300">
+                        He construido y mantenido plataformas escalables con más de 1,500 usuarios activos, incluyendo
+                        sistemas ERP para ISPs, plataformas de e-commerce multi-tenant y sistemas de gestión operativa.
+                        Disfruto crear soluciones confiables que resuelvan problemas reales de negocio.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+                            <span class="stat-number" data-count="5">0</span>
+                            <span class="stat-label">Años de Experiencia</span>
+                        </div>
+                        <div class="stat-item" data-aos="fade-up" data-aos-delay="500">
+                            <span class="stat-number" data-count="1500">0</span>
+                            <span class="stat-label">Usuarios Activos</span>
+                        </div>
+                        <div class="stat-item" data-aos="fade-up" data-aos-delay="600">
+                            <span class="stat-number" data-count="50">0</span>
+                            <span class="stat-label">Proyectos Completados</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image" data-aos="fade-left" data-aos-delay="300">
+                    <img src="resources/assets/images/mimage2.webp" alt="Fernando Osorio - Software Engineer" class="profile-image" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- ----- SECCIÓN HABILIDADES ----- -->
+        <section id="habilidades" class="page_section" data-aos="fade-up" data-aos-delay="300">
+            <div class="skills-header" data-aos="fade-down">
+                <h2>Stack <span>Tecnológico</span></h2>
+                <p>Tecnologías y herramientas que domino para crear soluciones de alto impacto</p>
+            </div>
+
+            <div class="skills-grid">
+                <!-- Card 1: Full Stack -->
+                <div class="skill-card" data-aos="fade-up" data-aos-offset="100">
+                    <div class="skill-icon"><img src="resources/assets/images/fullstack.webp" alt="Skills logo"></div>
+                    <h3>Desarrollo Full Stack</h3>
+                    <p>Desarrollo completo del ciclo de vida del software, desde arquitectura hasta despliegue en producción.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">TypeScript</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: ERP & Automatización -->
+                <div class="skill-card" data-aos="fade-up" data-aos-offset="120">
+                    <div class="skill-icon"><img src="resources/assets/images/erpautomatization.webp" alt="Skills logo"></div>
+                    <h3>ERP & Automatización</h3>
+                    <p>Sistemas ERP con facturación automatizada, pagos y reportes financieros integrados.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">SIIGO API</span>
+                        <span class="skill-tag">Facturación</span>
+                        <span class="skill-tag">Reportes</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: APIs & Integraciones -->
+                <div class="skill-card" data-aos="fade-up" data-aos-offset="140">
+                    <div class="skill-icon"><img src="resources/assets/images/apis.webp" alt="Skills logo"></div>
+                    <h3>APIs & Integraciones</h3>
+                    <p>Integración de APIs de terceros y desarrollo de APIs RESTful escalables.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Firebase</span>
+                        <span class="skill-tag">RouterOS</span>
+                        <span class="skill-tag">Mikrotik</span>
+                        <span class="skill-tag">REST API</span>
+                    </div>
+                </div>
+
+                <!-- Card 4: Mobile -->
+                <div class="skill-card" data-aos="fade-up" data-aos-offset="160">
+                    <div class="skill-icon"><img src="resources/assets/images/mobile.webp" alt="Skills logo"></div>
+                    <h3>Desarrollo Mobile</h3>
+                    <p>Aplicaciones móviles para operarios de campo con sincronización en tiempo real.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Flutter</span>
+                        <span class="skill-tag">Dart</span>
+                        <span class="skill-tag">iOS</span>
+                        <span class="skill-tag">Android</span>
+                    </div>
+                </div>
+
+                <!-- Card 5: Sistemas en Tiempo Real -->
+                <div class="skill-card" data-aos="fade-up" data-aos-offset="180">
+                    <div class="skill-icon"><img src="resources/assets/images/realtime.webp" alt="Skills logo"></div>
+                    <h3>Tiempo Real & Bots</h3>
+                    <p>Sistemas de notificaciones push, bots automatizados y tracking en tiempo real.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">WebSockets</span>
+                        <span class="skill-tag">Push Notifications</span>
+                        <span class="skill-tag">Bots</span>
+                    </div>
+                </div>
+
+                <!-- Card 6: Infraestructura -->
+                <div class="skill-card" data-aos="fade-up" data-aos-offset="200">
+                    <div class="skill-icon"><img src="resources/assets/images/linux.webp" alt="Skills logo"></div>
+                    <h3>Linux & Redes</h3>
+                    <p>Administración de servidores Linux, redes, VPNs y servicios en la nube.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">Networking</span>
+                        <span class="skill-tag">VPN</span>
+                        <span class="skill-tag">Cloud</span>
+                        <span class="skill-tag">Docker</span>
+                    </div>
+                </div>
+
+                <!-- Card 7: Seguridad -->
+                <div class="skill-card" data-aos="fade-up" data-aos-offset="220">
+                    <div class="skill-icon"><img src="resources/assets/images/cybersecurity.webp" alt="Skills logo"></div>
+                    <h3>Seguridad</h3>
+                    <p>Desarrollo con enfoque en seguridad y análisis de vulnerabilidades.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">OWASP</span>
+                        <span class="skill-tag">Pentesting</span>
+                        <span class="skill-tag">Vulnerability Analysis</span>
+                    </div>
+                </div>
+
+                <!-- Card 8: Frontend -->
+                <div class="skill-card" data-aos="fade-up" data-aos-offset="240">
+                    <div class="skill-icon"><img src="resources/assets/images/frontend.webp" alt="Skills logo"></div>
+                    <h3>Frontend Moderno</h3>
+                    <p>Interfaces de usuario modernas, responsivas y optimizadas para rendimiento.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Vue.js</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">GSAP</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ----- SECCIÓN EXPERIENCIA ----- -->
+        <section id="experiencia" class="page_section" data-aos="fade-up">
+            <div class="experience-header" data-aos="fade-down">
+                <h2>Trayectoria <span>Profesional</span></h2>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">2024 - Presente</span>
+                        <h3 class="timeline-title">Software Engineer Senior</h3>
+                        <p class="timeline-company">Cryptocore Development</p>
+                        <p class="timeline-desc">
+                            Liderazgo técnico en desarrollo de sistemas ERP para ISPs con 1,500+ usuarios.
+                            Implementación de arquitecturas escalables y automatización de procesos de facturación.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">2021 - 2023</span>
+                        <h3 class="timeline-title">Full Stack Developer</h3>
+                        <p class="timeline-company">Empresa y negocios comerciales</p>
+                        <p class="timeline-desc">
+                            Desarrollo de plataformas multi-tenant de e-commerce. Integraciones con APIs de
+                            pago (SIIGO) y sistemas de gestión de redes (RouterOS/Mikrotik). Apps móviles Flutter.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">2020 - 2021</span>
+                        <h3 class="timeline-title">Backend Developer</h3>
+                        <p class="timeline-company">Startup Tecnológica</p>
+                        <p class="timeline-desc">
+                            Desarrollo de APIs RESTful y sistemas en tiempo real con WebSockets.
+                            Implementación de bots y sistemas de notificaciones push con Firebase.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">2019 - 2020</span>
+                        <h3 class="timeline-title">Desarrollador Junior</h3>
+                        <p class="timeline-company">Agencia Digital</p>
+                        <p class="timeline-desc">
+                            Inicios en desarrollo web, administración de servidores Linux y
+                            configuración de redes. Primeros proyectos con PHP y JavaScript.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ----- SECCIÓN PROYECTOS ----- -->
+        <section id="proyectos" class="page_section" data-aos="fade-up">
+            <div class="projects-header" data-aos="fade-down">
+                <h2>Proyectos <span>Destacados</span></h2>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Proyecto 1: ERP ISP -->
+                <div class="project-card" data-aos="fade-up" data-aos-offset="100">
+                    <div class="project-image netcore">
+                        <span></span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Netcore ISP</h3>
+                        <p class="project-desc">
+                            Sistema completo de gestión para proveedores de internet con facturación automatizada,
+                            pagos integrados, reportes financieros y manejo de equipos mikrotik.
+                        </p>
+                        <div class="ldemo">
+                            <h3>Live demo</h3>
+                            <a href="https://netcoreisp.cryptocoreapp.com/app/">netcoreisp.cryptocoreapp.com</a>
+                        </div>
+                        <div class="project-stats">
+                            <div class="project-stat">
+                                <span>1,500+</span> usuarios
+                            </div>
+                            <div class="project-stat">
+                                <span>99.9%</span> uptime
+                            </div>
+                            <div class="project-stat">
+                                <span>En producción</span>
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">PHP</span>
+                            <span class="tech-badge">RouterOS</span>
+                            <span class="tech-badge">MySQL</span>
+                            <span class="tech-badge">Telegram API</span>
+                            <span class="tech-badge">SIIGO API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2: E-commerce -->
+                <div class="project-card" data-aos="fade-up" data-aos-offset="120">
+                    <div class="project-image ecoreapp">
+                        <span></span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">E-core App</h3>
+                        <p class="project-desc">
+                            Plataforma multi-tenant de comercio electrónico con panel administrativo
+                            personalizable para cada tenant, facturación electrónica, sistema delivery en tiempo real, sistema de crédito, PWA.
+                        </p>
+                        <div class="ldemo">
+                            <h3>Live demo</h3>
+                            <a href="https://shop.cryptocoreapp.com/">shop.cryptocoreapp.com</a>
+                        </div>
+                        <div class="project-stats">
+                            <div class="project-stat">
+                                <span>10+</span> tiendas
+                            </div>
+                            <div class="project-stat">
+                                <span>10K+</span> productos
+                            </div>
+                            <div class="project-stat">
+                                <span>En producción</span>
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-badge">Firebase</span>
+                            <span class="tech-badge">PHP</span>
+                            <span class="tech-badge">MySQL</span>
+                            <span class="tech-badge">Telegram Api</span>
+                            <span class="tech-badge">Whatsapp Api</span>
+                            <span class="tech-badge">SIIGO Api</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3: App Field -->
+                <div class="project-card" data-aos="fade-up" data-aos-offset="140">
+                    <div class="project-image dentalcore">
+                        <span></span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Dentalcore</h3>
+                        <p class="project-desc">
+                            Sistema para gestión y control destinado a clínicas y consultorios odontológicos, 
+                            facturación electrónica, historica clínica, odontográma dinámico, citas, pacientes, médicos, login.
+                        </p>
+                        <div class="project-stats">
+                            <div class="project-stat">
+                                <span>100+</span> pacientes
+                            </div>
+                            <div class="project-stat">
+                                <span>4.8★</span> rating
+                            </div>
+                            <div class="project-stat">
+                                <span>En producción</span>
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-badge">PHP</span>
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Firebase</span>
+                            <span class="tech-badge">SIIGO Api</span>
+                            <span class="tech-badge">Telegram Api</span>
+                            <span class="tech-badge">Whatsapp Api</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 4: Network Manager -->
+                <div class="project-card" data-aos="fade-up" data-aos-offset="160">
+                    <div class="project-image fundasphoenix">
+                        <span></span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Sistema tapicerías</h3>
+                        <p class="project-desc">
+                            Sistema de gestión para tapicería en Chile, facturación, órdenes en pdf, 
+                            seguimiento de estado en proceso de fabricación, reportes, catálogo interactivo de diseños, 
+                            formato de procesos.
+                        </p>
+                        <div class="project-stats">
+                            <div class="project-stat">
+                                <span>500+</span> Clientes
+                            </div>
+                            <div class="project-stat">
+                                <span>Real-time</span> monitoring
+                            </div>
+                            <div class="project-stat">
+                                <span>En producción</span>
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Whatsapp API</span>
+                            <span class="tech-badge">WebSockets</span>
+                            <span class="tech-badge">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 5: Bot Automation -->
+                <div class="project-card" data-aos="fade-up" data-aos-offset="180">
+                    <div class="project-image bingocore">
+                        <span></span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Sistema bingo virtual</h3>
+                        <p class="project-desc">
+                            Plataforma de juego de bingo virtual, cartones con númeración aleatória, 
+                            sistema de pagos, panel de administración, página personalizable, cartones interactivos,
+                            notificación de ganadores, juego de balotas en tiempo real, publicidad in-app, validación y soporte.
+                        </p>
+                        <div class="ldemo">
+                            <h3>Live demo</h3>
+                            <a href="https://bingo.cryptocoreapp.com/">bingo.cryptocoreapp.com</a>
+                        </div>
+                        <div class="project-stats">
+                            <div class="project-stat">
+                                <span>100+</span> cartones
+                            </div>
+                            <div class="project-stat">
+                                <span>10 modos</span> de juego
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-badge">PHP</span>
+                            <span class="tech-badge">MySQL</span>
+                            <span class="tech-badge">jQuery</span>
+                            <span class="tech-badge">WhatsApp API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 6: SIRVI -->
+                <div class="project-card" data-aos="fade-up" data-aos-offset="200">
+                    <div class="project-image sirviapp">
+                        <span></span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">S.I.R.V.I App</h3>
+                        <p class="project-desc">
+                            Sistema Inteligente para Registro de Ventas e Inventario 
+                            es un sistema para la gestión de droguerías, facturación electrónica, 
+                            sistema de caja, entradas y salidas, reportes, sistema de clientes, inventario detallado,
+                            sistema de separado, empleados, obligaciones.
+                        </p>
+                        <div class="project-stats">
+                            <div class="project-stat">
+                                <span>5+</span> droguerías
+                            </div>
+                            <div class="project-stat">
+                                <span>1000+</span> productos
+                            </div>
+                            <div class="project-stat">
+                                <span>En producción</span>
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-badge">PHP</span>
+                            <span class="tech-badge">MySQL</span>
+                            <span class="tech-badge">jQuery</span>
+                            <span class="tech-badge">SIIGO Api</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 6: SIRVI -->
+                <div class="project-card" data-aos="fade-up" data-aos-offset="200">
+                    <div class="project-image transforma">
+                        <span></span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Juegos cognitivos</h3>
+                        <p class="project-desc">
+                            Juegos para diagnóstico y filtro, destinado a empresas que
+                            emplean pruebas de diagnóstico y elección de candidatos potenciales 
+                            para un cargo en específico, estadísticas y puntajes basados en los 
+                            resultados del juego.
+                        </p>
+                        <div class="project-stats">
+                            <div class="project-stat">
+                                <span>8</span> juegos
+                            </div>
+                            <div class="project-stat">
+                                <span>150+</span> aspirantes
+                            </div>
+                            <div class="project-stat">
+                                <span>En producción</span>
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-badge">PHP</span>
+                            <span class="tech-badge">MySQL</span>
+                            <span class="tech-badge">jQuery</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ----- SECCIÓN ESFERA 3D (ORIGINAL) ----- -->
+        <section class="page_section" id="third_container" data-aos="fade-up">
+            <section class="video-section" id="metalSphere">
+                <div id="sphereContainer">
+                    <img src="resources/assets/images/sphere.png" alt="Esfera tecnológica" id="sphere" loading="lazy" />
+                </div>
+                <span class="light-line"></span>
+            </section>
+        </section>
+
+        <!-- ----- SECCIÓN CONTACTO ----- -->
+        <section id="contacto" class="page_section" data-aos="fade-up">
+            <div class="contact-header" data-aos="fade-down">
+                <h2>Trabajemos <span>Juntos</span></h2>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item" data-aos="fade-right" data-aos-delay="100">
+                        <div class="contact-icon"><img src="resources/assets/images/svgs/mail.svg" alt="Mail"></div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>ferchosorio8@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item" data-aos="fade-right" data-aos-delay="200">
+                        <div class="contact-icon"><img src="resources/assets/images/svgs/smartphone.svg" alt="Phone"></div>
+                        <div class="contact-details">
+                            <h4>Teléfono</h4>
+                            <p>+57 (310) 657 4835</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item" data-aos="fade-right" data-aos-delay="300">
+                        <div class="contact-icon"><img src="resources/assets/images/svgs/location.svg" alt="Location"></div>
+                        <div class="contact-details">
+                            <h4>Ubicación</h4>
+                            <p>Colombia / Remoto</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item" data-aos="fade-right" data-aos-delay="400">
+                        <div class="contact-icon"><img src="resources/assets/images/svgs/user.svg" alt="User"></div>
+                        <div class="contact-details">
+                            <h4>Disponibilidad</h4>
+                            <p>Abierto a nuevas oportunidades</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" data-aos="fade-left" data-aos-delay="200">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name" placeholder="Tu nombre completo" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Asunto</label>
+                        <input type="text" id="subject" name="subject" placeholder="¿Sobre qué quieres hablar?" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Enviar Mensaje</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- ----- FOOTER ----- -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">CRYPTOCORE</div>
+                <div class="footer-social">
+                    <a href="https://github.com/devcryptocore" aria-label="GitHub"><img src="resources/assets/images/svgs/github.svg" alt="Github"></a>
+                    <a href="https://www.linkedin.com/in/ferchosorio/" aria-label="LinkedIn"><img src="resources/assets/images/svgs/linkedin.svg" alt="LinkedIn"></a>
+                    <a href="https://www.facebook.com/profile.php?id=100087665141542" aria-label="Facebook"><img src="resources/assets/images/svgs/facebook.svg" alt="Facebook"></a>
+                    <a href="https://www.tiktok.com/@cryptocoredevs" aria-label="TikTok"><img src="resources/assets/images/svgs/tiktok.svg" alt="TikTok"></a>
+                    <a href="https://wa.me/+573106574835" aria-label="Whatsapp"><img src="resources/assets/images/svgs/whatsapp.svg" alt="Whatsapp"></a>
+                </div>
+                <p id="brandyear"></p>
+                <small>Diseñado y desarrollado por Fernando Osorio</small>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>
