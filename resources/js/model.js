@@ -146,7 +146,7 @@ loader.load(
     },
     (xhr) => {
         const percent = (xhr.loaded / xhr.total * 100);
-        console.log(`Cargando modelo: ${Math.round(percent)}%`);
+        //console.log(`Cargando modelo: ${Math.round(percent)}%`);
     },
     (error) => {
         console.warn('Error cargando modelo FBX:', error);
