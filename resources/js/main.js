@@ -1,23 +1,17 @@
 const fecha = new Date();
 const year = fecha.getFullYear();
-// Variable para controlar si las animaciones ya ocurrieron
 const animationState = {
     menuOpen: false
 };
 
-let lenis; // Global para acceso externo
-
-// ============================================
-// VERSIONADO DE ARCHIVOS (Cache busting)
-// ============================================
+let lenis;
 
 window.addEventListener("load", () => {
-    // Forzar scroll arriba al cargar
+
     if (window.scrollY > 0) {
         window.scrollTo(0, 0);
     }
 
-    // Resetear scroll con Lenis si está inicializado
     setTimeout(() => {
         if (typeof Lenis !== 'undefined' && lenis) {
             lenis.scrollTo(0, { immediate: true });
@@ -36,7 +30,6 @@ window.addEventListener("load", () => {
         });
     }
 
-    // Inicializar AOS con configuración optimizada
     AOS.init({
         once: false,
         mirror: true,
@@ -48,50 +41,36 @@ window.addEventListener("load", () => {
         }
     });
 
-    // Inicializar contadores cuando AOS termine de animar
     setTimeout(initCounters, 1500);
 });
 
-// ============================================
-// LENIS SMOOTH SCROLL - CONFIGURACIÓN OPTIMIZADA
-// ============================================
-
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Registrar plugin GSAP
     gsap.registerPlugin(ScrollTrigger);
 
     document.querySelector("#brandyear").innerHTML = `&copy; ${year} Cryptocore`;
-    // Inicializar Lenis
+
     lenis = new Lenis({
         duration: 1.2,
         easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         smooth: true,
-        smoothTouch: false, // Deshabilitar en touch para mejor rendimiento
+        smoothTouch: false,
         touchMultiplier: 2,
     });
 
-    // Integrar Lenis con ScrollTrigger: SOLO usar gsap.ticker (no doble RAF)
     gsap.ticker.add((time) => {
         lenis.raf(time * 1000);
     });
     gsap.ticker.lagSmoothing(0);
     lenis.on('scroll', ScrollTrigger.update);
 
-    // AOS necesita saber que el scroll lo maneja Lenis, no el navegador nativo
-    // Refrescamos AOS después de que Lenis ya está corriendo
     setTimeout(() => {
         if (typeof AOS !== 'undefined') {
             AOS.refresh();
         }
     }, 300);
 
-    // Sincronizar ScrollTrigger con Lenis
     ScrollTrigger.config({ ignoreMobileResize: true });
-
-    // ============================================
-    // SCROLL HACIA SECCIONES (Navegación suave)
-    // ============================================
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -100,7 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const target = document.querySelector(targetId);
 
             if (target) {
-                // Cerrar menú móvil si está abierto
                 closeMobileMenu();
 
                 lenis.scrollTo(target, {
@@ -108,15 +86,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     duration: 1.5
                 });
 
-                // Actualizar URL sin recargar
                 history.pushState(null, '', targetId);
             }
         });
     });
-
-    // ============================================
-    // MENÚ MÓVIL (Hamburguesa)
-    // ============================================
 
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.getElementById('nav-menu');
@@ -142,7 +115,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Cerrar menú al hacer click fuera
     document.addEventListener('click', (e) => {
         if (animationState.menuOpen &&
             !e.target.closest('.linkContainer') &&
@@ -150,10 +122,6 @@ document.addEventListener("DOMContentLoaded", () => {
             closeMobileMenu();
         }
     });
-
-    // ============================================
-    // SCROLLTRIGGER: ESFERA METÁLICA
-    // ============================================
 
     const metalsphere = document.getElementById('sphere');
     const container = document.querySelector("#metalSphere");
@@ -190,10 +158,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // ============================================
-    // SCROLLTRIGGER: TEXTO HERO SEPARÁNDOSE
-    // ============================================
-
     const textleft = document.getElementById('lefttext');
     const textright = document.getElementById('righttext');
     const icontainer = document.querySelector(".media-icons-container");
@@ -218,10 +182,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // ============================================
-    // SCROLLTRIGGER: NAVBAR BACKGROUND
-    // ============================================
-
     const navbar = document.querySelector('.DesktopNavBar');
 
     ScrollTrigger.create({
@@ -240,11 +200,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // ============================================
-    // SCROLLTRIGGER: ANIMACIONES DE ENTRADA POR SECCIÓN
-    // ============================================
-
-    // Timeline items
     gsap.utils.toArray('.timeline-item').forEach((item, i) => {
         gsap.from(item, {
             scrollTrigger: {
@@ -258,10 +213,6 @@ document.addEventListener("DOMContentLoaded", () => {
             ease: "power2.out"
         });
     });
-
-    // ============================================
-    // FORMULARIO DE CONTACTO
-    // ============================================
 
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
@@ -300,18 +251,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // ============================================
-    // DETECTAR TIPO DE DISPOSITIVO
-    // ============================================
-
     const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
     const isMobile = window.innerWidth <= 640;
 
     if (isTouchDevice || isMobile) {
-        // Reducir complejidad en móviles
         document.body.classList.add('touch-device');
 
-        // Deshabilitar efectos pesados
         const canvas = document.getElementById('canvas');
         const canvascont = document.querySelector("#canvas-cont");
         if (canvas && isMobile) {
@@ -323,10 +268,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // ============================================
-    // PREVENIR ERRORES DE CARGA DE IMÁGENES
-    // ============================================
-
     document.querySelectorAll('img').forEach(img => {
         img.addEventListener('error', function() {
             console.warn(`Error cargando imagen: ${this.src}`);
@@ -335,10 +276,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
-
-// ============================================
-// CONTADORES ANIMADOS (Stats)
-// ============================================
 
 function initCounters() {
     const counters = document.querySelectorAll('.stat-number[data-count]');
@@ -359,8 +296,8 @@ function initCounters() {
 
 function animateCounter(counter) {
     const target = parseInt(counter.getAttribute('data-count'));
-    const duration = 2000; // 2 segundos
-    const step = target / (duration / 16); // 60fps
+    const duration = 2000;
+    const step = target / (duration / 16);
     let current = 0;
 
     function update() {
@@ -376,18 +313,10 @@ function animateCounter(counter) {
     update();
 }
 
-// ============================================
-// FUNCIONES AUXILIARES
-// ============================================
-
 async function getVersion() {
     const fecha = new Date();
     return fecha.getTime();
 }
-
-// ============================================
-// PREVENIR ZOOM EN INPUTS EN MÓVIL
-// ============================================
 
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('input, textarea, select').forEach(el => {
@@ -403,10 +332,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// ============================================
-// MANEJO DE ERRORES GLOBAL
-// ============================================
-
 window.addEventListener('error', (e) => {
     console.error('Error global:', e.message);
 });
@@ -415,13 +340,8 @@ window.addEventListener('unhandledrejection', (e) => {
     console.error('Promesa rechazada no manejada:', e.reason);
 });
 
-// ============================================
-// VISIBILITY API (Pausar animaciones en background)
-// ============================================
-
 document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
-        // Pausar animaciones cuando la pestaña no es visible
         gsap.globalTimeline.pause();
     } else {
         gsap.globalTimeline.resume();

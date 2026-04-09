@@ -1,26 +1,15 @@
-/**
- * CRYPTOCORE PORTFOLIO - Three.js Model
- * Renderizado 3D optimizado para la esfera del hero
- */
-
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { FBXLoader } from 'three/addons/loaders/FBXLoader.js';
-
-// ============================================
-// CONFIGURACIÓN INICIAL
-// ============================================
 
 const canvas = document.getElementById('canvas');
 if (!canvas) {
     console.error('Canvas no encontrado');
 }
 
-// Detectar si es móvil para ajustar calidad
 const isMobile = window.matchMedia('(pointer: coarse)').matches || window.innerWidth <= 640;
 const isLowPower = navigator.hardwareConcurrency <= 4;
 
-// Calcular dimensiones responsivas
 function getCanvasDimensions() {
     const width = window.innerWidth;
     let size;
@@ -38,13 +27,9 @@ function getCanvasDimensions() {
 
 let dimensions = getCanvasDimensions();
 
-// ============================================
-// RENDERER CONFIGURACIÓN
-// ============================================
-
 const renderer = new THREE.WebGLRenderer({
     canvas,
-    antialias: !isMobile, // Desactivar antialiasing en móviles
+    antialias: !isMobile,
     alpha: true,
     powerPreference: isLowPower ? 'low-power' : 'high-performance'
 });
@@ -54,13 +39,8 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.5 : 2));
 renderer.shadowMap.enabled = !isMobile;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
-// ============================================
-// ESCENA Y CÁMARA
-// ============================================
-
 const scene = new THREE.Scene();
 
-// Niebla sutil (deshabilitar en móviles por rendimiento)
 if (!isMobile) {
     scene.fog = new THREE.Fog(0x000000, 200, 2000);
 }
@@ -74,16 +54,10 @@ const camera = new THREE.PerspectiveCamera(
 camera.position.z = 110;
 camera.position.y = 190;
 
-// ============================================
-// ILUMINACIÓN
-// ============================================
-
-// Luz hemisférica
 const hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 3);
 hemiLight.position.set(1000, 300, 300);
 scene.add(hemiLight);
 
-// Luz direccional con sombras
 const dirLight = new THREE.DirectionalLight(0xffffff, 3);
 dirLight.position.set(100, 100, 200);
 
@@ -99,29 +73,19 @@ if (!isMobile) {
 
 scene.add(dirLight);
 
-// Luz ambiental adicional
 const ambientLight = new THREE.AmbientLight(0x404040, 0.5);
 scene.add(ambientLight);
-
-// ============================================
-// CONTROLES
-// ============================================
 
 const controls = new OrbitControls(camera, canvas);
 controls.enablePan = false;
 controls.enableZoom = false;
-controls.enableRotate = !isMobile; // Solo rotar en desktop
+controls.enableRotate = !isMobile;
 controls.autoRotate = true;
 controls.autoRotateSpeed = 0.5;
-
-// ============================================
-// CARGA DEL MODELO 3D
-// ============================================
 
 let modelo3D;
 const loader = new FBXLoader();
 
-// Función para crear un fallback si el modelo no carga
 function createFallbackSphere() {
     const geometry = new THREE.SphereGeometry(50, 32, 32);
     const material = new THREE.MeshStandardMaterial({
@@ -136,13 +100,11 @@ function createFallbackSphere() {
     return sphere;
 }
 
-// Intentar cargar el modelo FBX
 loader.load(
     './resources/assets/models/sphereTX/sphere.fbx',
     (object) => {
         const textureLoader = new THREE.TextureLoader();
 
-        // Cargar textura con manejo de errores
         textureLoader.load(
             './resources/assets/models/sphereTX/sphere.jpg',
             (textura) => {
@@ -164,7 +126,6 @@ loader.load(
                         }
                     });
 
-                    // Centrar el modelo
                     const box = new THREE.Box3().setFromObject(object);
                     const center = box.getCenter(new THREE.Vector3());
                     object.position.sub(center);
@@ -176,7 +137,7 @@ loader.load(
                     console.log('Modelo 3D cargado exitosamente');
                 }, 100);
             },
-            undefined, // onProgress
+            undefined,
             (error) => {
                 console.warn('Error cargando textura, usando fallback:', error);
                 useFallbackModel();
@@ -184,7 +145,6 @@ loader.load(
         );
     },
     (xhr) => {
-        // Progreso de carga
         const percent = (xhr.loaded / xhr.total * 100);
         console.log(`Cargando modelo: ${Math.round(percent)}%`);
     },
@@ -204,34 +164,24 @@ function useFallbackModel() {
     }
 }
 
-// ============================================
-// LOOP DE ANIMACIÓN
-// ============================================
-
 let isVisible = true;
 let animationId;
 
-function animar() {
+function animator() {
     if (!isVisible) {
-        animationId = requestAnimationFrame(animar);
+        animationId = requestAnimationFrame(animator);
         return;
     }
 
     controls.update();
     renderer.render(scene, camera);
-    animationId = requestAnimationFrame(animar);
+    animationId = requestAnimationFrame(animator);
 }
 
-// Iniciar animación
-animar();
-
-// ============================================
-// SCROLLTRIGGER INTEGRACIÓN
-// ============================================
+animator();
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Rotación del modelo basada en scroll
 ScrollTrigger.create({
     trigger: ".container",
     start: "top center",
@@ -247,7 +197,6 @@ ScrollTrigger.create({
     }
 });
 
-// Animación del canvas (movimiento y escala)
 const thirdSection = document.querySelectorAll('.page_section')[2];
 if (thirdSection) {
     gsap.to("#canvas", {
@@ -267,10 +216,6 @@ if (thirdSection) {
     });
 }
 
-// ============================================
-// RESPONSIVE
-// ============================================
-
 function onWindowResize() {
     dimensions = getCanvasDimensions();
 
@@ -281,16 +226,11 @@ function onWindowResize() {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.5 : 2));
 }
 
-// Debounce para el resize
 let resizeTimeout;
 window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(onWindowResize, 100);
 }, { passive: true });
-
-// ============================================
-// VISIBILITY API (Optimización de rendimiento)
-// ============================================
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -302,7 +242,6 @@ if (canvas) {
     observer.observe(canvas);
 }
 
-// Pausar cuando la pestaña no está visible
 document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
         isVisible = false;
@@ -310,10 +249,6 @@ document.addEventListener('visibilitychange', () => {
         isVisible = true;
     }
 });
-
-// ============================================
-// LIMPIEZA AL SALIR
-// ============================================
 
 window.addEventListener('beforeunload', () => {
     cancelAnimationFrame(animationId);

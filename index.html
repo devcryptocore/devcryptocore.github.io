@@ -16,18 +16,12 @@
     <meta property="fb:app_id" content="368569449013481" />
     <meta name="author" content="Fernando Osorio">
     <title>Fernando Osorio | Software Engineer</title>
-    <link rel="shortcut icon" href="resources/assets/images/proto.ico" type="image/x-icon">
-
-    <!-- Preload crítico -->
+    <link rel="shortcut icon" href="resources/assets/images/favicon.ico" type="image/x-icon">
     <link rel="preload" href="resources/assets/fonts/GothicExpanded.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="preload" href="resources/assets/fonts/Montserrat.ttf" as="font" type="font/ttf" crossorigin>
-
-    <!-- Estilos -->
     <link class="versionized" rel="stylesheet" href="resources/css/stylex.css">
     <link class="versionized" rel="stylesheet" href="resources/css/animations.css">
     <link rel="stylesheet" href="resources/css/aos.css">
-
-    <!-- Three.js Import Map (debe ir antes de los módulos) -->
     <script type="importmap">
     {
         "imports": {
@@ -36,8 +30,6 @@
         }
     }
     </script>
-
-    <!-- Scripts: orden correcto — dependencias primero, main al final con defer -->
     <script src="resources/js/jquery.min.js" defer></script>
     <script src="resources/js/gsap.min.js" defer></script>
     <script src="resources/js/ScrollTrigger.min.js" defer></script>
@@ -47,7 +39,6 @@
     <script type="module" src="resources/js/model.js"></script>
 </head>
 <body>
-    <!-- ========== NAVBAR ========== -->
     <nav class="DesktopNavBar" role="navigation" aria-label="Navegación principal">
         <div class="side-navBar logoContainer">
             <img src="resources/assets/images/ccorelogo128.webp" alt="Cryptocore Logo" data-aos="fade-right" data-aos-delay="100" width="50" height="50">
@@ -77,33 +68,29 @@
         <a href="#proyectos">Proyectos</a>
         <a href="#contacto">Contacto</a>
     </div>
-
-    <!-- ========== CONTENIDO PRINCIPAL ========== -->
     <main class="container">
-
-        <!-- ----- SECCIÓN HERO ----- -->
         <section id="inicio" class="page_section hero-section first-section" data-aos="fade-up">
             <div class="tag">
                 <img src="resources/assets/images/svgs/forma1.svg" alt="Decoración" class="forma" loading="lazy">
             </div>
 
             <div class="media-icons-container">
-                <a href="#" aria-label="Facebook" data-aos="fade-up" data-aos-delay="200" data-aos-offset="0">
+                <a href="https://www.facebook.com/profile.php?id=100087665141542" aria-label="Facebook" data-aos="fade-up" data-aos-delay="200" data-aos-offset="0">
                     <img src="resources/assets/images/svgs/facebook-logo.svg" alt="Facebook">
                 </a>
-                <a href="#" aria-label="TikTok" data-aos="fade-up" data-aos-delay="350" data-aos-offset="0">
+                <a href="https://www.instagram.com/devcryptocore" aria-label="Instagram" data-aos="fade-up" data-aos-delay="350" data-aos-offset="0">
                     <img src="resources/assets/images/svgs/instagram-logo.svg" alt="Instagram">
                 </a>
-                <a href="#" aria-label="Instagram" data-aos="fade-up" data-aos-delay="500" data-aos-offset="0">
+                <a href="https://wa.me/+573106574835" aria-label="Whatsapp" data-aos="fade-up" data-aos-delay="500" data-aos-offset="0">
                     <img src="resources/assets/images/svgs/whatsapp-logo.svg" alt="WhatsApp">
                 </a>
-                <a href="#" aria-label="Telegram" data-aos="fade-up" data-aos-delay="650" data-aos-offset="0">
+                <a href="https://t.me/cryptocore_dev" aria-label="Telegram" data-aos="fade-up" data-aos-delay="650" data-aos-offset="0">
                     <img src="resources/assets/images/svgs/telegram-logo.svg" alt="Telegram">
                 </a>
-                <a href="#" aria-label="WhatsApp" data-aos="fade-up" data-aos-delay="800" data-aos-offset="0">
+                <a href="https://www.tiktok.com/@cryptocoredevs" aria-label="TikTok" data-aos="fade-up" data-aos-delay="800" data-aos-offset="0">
                     <img src="resources/assets/images/svgs/tiktok-logo.svg" alt="TikTok">
                 </a>
-                <a href="#" aria-label="LinkedIn" data-aos="fade-up" data-aos-delay="950" data-aos-offset="0">
+                <a href="https://www.linkedin.com/in/ferchosorio/" aria-label="LinkedIn" data-aos="fade-up" data-aos-delay="950" data-aos-offset="0">
                     <img src="resources/assets/images/svgs/linkedin-logo.svg" alt="LinkedIn">
                 </a>
             </div>
@@ -116,8 +103,6 @@
                 <h1 class="ini-text" id="righttext">WARE</h1>
             </div>
         </section>
-
-        <!-- ----- SECCIÓN SOBRE MÍ ----- -->
         <section id="sobre-mi" class="page_section" data-aos="fade-up">
             <div class="about-content">
                 <div class="about-text">
@@ -155,16 +140,12 @@
                 </div>
             </div>
         </section>
-
-        <!-- ----- SECCIÓN HABILIDADES ----- -->
         <section id="habilidades" class="page_section" data-aos="fade-up" data-aos-delay="300">
             <div class="skills-header" data-aos="fade-down">
                 <h2>Stack <span>Tecnológico</span></h2>
                 <p>Tecnologías y herramientas que domino para crear soluciones de alto impacto</p>
             </div>
-
             <div class="skills-grid">
-                <!-- Card 1: Full Stack -->
                 <div class="skill-card" data-aos="fade-up" data-aos-offset="100">
                     <div class="skill-icon"><img src="resources/assets/images/fullstack.webp" alt="Skills logo"></div>
                     <h3>Desarrollo Full Stack</h3>
@@ -177,8 +158,6 @@
                         <span class="skill-tag">TypeScript</span>
                     </div>
                 </div>
-
-                <!-- Card 2: ERP & Automatización -->
                 <div class="skill-card" data-aos="fade-up" data-aos-offset="120">
                     <div class="skill-icon"><img src="resources/assets/images/erpautomatization.webp" alt="Skills logo"></div>
                     <h3>ERP & Automatización</h3>
@@ -189,8 +168,6 @@
                         <span class="skill-tag">Reportes</span>
                     </div>
                 </div>
-
-                <!-- Card 3: APIs & Integraciones -->
                 <div class="skill-card" data-aos="fade-up" data-aos-offset="140">
                     <div class="skill-icon"><img src="resources/assets/images/apis.webp" alt="Skills logo"></div>
                     <h3>APIs & Integraciones</h3>
@@ -202,8 +179,6 @@
                         <span class="skill-tag">REST API</span>
                     </div>
                 </div>
-
-                <!-- Card 4: Mobile -->
                 <div class="skill-card" data-aos="fade-up" data-aos-offset="160">
                     <div class="skill-icon"><img src="resources/assets/images/mobile.webp" alt="Skills logo"></div>
                     <h3>Desarrollo Mobile</h3>
@@ -215,8 +190,6 @@
                         <span class="skill-tag">Android</span>
                     </div>
                 </div>
-
-                <!-- Card 5: Sistemas en Tiempo Real -->
                 <div class="skill-card" data-aos="fade-up" data-aos-offset="180">
                     <div class="skill-icon"><img src="resources/assets/images/realtime.webp" alt="Skills logo"></div>
                     <h3>Tiempo Real & Bots</h3>
@@ -227,8 +200,6 @@
                         <span class="skill-tag">Bots</span>
                     </div>
                 </div>
-
-                <!-- Card 6: Infraestructura -->
                 <div class="skill-card" data-aos="fade-up" data-aos-offset="200">
                     <div class="skill-icon"><img src="resources/assets/images/linux.webp" alt="Skills logo"></div>
                     <h3>Linux & Redes</h3>
@@ -241,8 +212,6 @@
                         <span class="skill-tag">Docker</span>
                     </div>
                 </div>
-
-                <!-- Card 7: Seguridad -->
                 <div class="skill-card" data-aos="fade-up" data-aos-offset="220">
                     <div class="skill-icon"><img src="resources/assets/images/cybersecurity.webp" alt="Skills logo"></div>
                     <h3>Seguridad</h3>
@@ -253,8 +222,6 @@
                         <span class="skill-tag">Vulnerability Analysis</span>
                     </div>
                 </div>
-
-                <!-- Card 8: Frontend -->
                 <div class="skill-card" data-aos="fade-up" data-aos-offset="240">
                     <div class="skill-icon"><img src="resources/assets/images/frontend.webp" alt="Skills logo"></div>
                     <h3>Frontend Moderno</h3>
@@ -268,8 +235,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- ----- SECCIÓN EXPERIENCIA ----- -->
         <section id="experiencia" class="page_section" data-aos="fade-up">
             <div class="experience-header" data-aos="fade-down">
                 <h2>Trayectoria <span>Profesional</span></h2>
@@ -288,7 +253,6 @@
                         </p>
                     </div>
                 </div>
-
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
@@ -301,7 +265,6 @@
                         </p>
                     </div>
                 </div>
-
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
@@ -314,7 +277,6 @@
                         </p>
                     </div>
                 </div>
-
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
@@ -329,15 +291,11 @@
                 </div>
             </div>
         </section>
-
-        <!-- ----- SECCIÓN PROYECTOS ----- -->
         <section id="proyectos" class="page_section" data-aos="fade-up">
             <div class="projects-header" data-aos="fade-down">
                 <h2>Proyectos <span>Destacados</span></h2>
             </div>
-
             <div class="projects-grid">
-                <!-- Proyecto 1: ERP ISP -->
                 <div class="project-card" data-aos="fade-up" data-aos-offset="100">
                     <div class="project-image netcore">
                         <span></span>
@@ -373,8 +331,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Proyecto 2: E-commerce -->
                 <div class="project-card" data-aos="fade-up" data-aos-offset="120">
                     <div class="project-image ecoreapp">
                         <span></span>
@@ -410,8 +366,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Proyecto 3: App Field -->
                 <div class="project-card" data-aos="fade-up" data-aos-offset="140">
                     <div class="project-image dentalcore">
                         <span></span>
@@ -443,8 +397,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Proyecto 4: Network Manager -->
                 <div class="project-card" data-aos="fade-up" data-aos-offset="160">
                     <div class="project-image fundasphoenix">
                         <span></span>
@@ -475,8 +427,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Proyecto 5: Bot Automation -->
                 <div class="project-card" data-aos="fade-up" data-aos-offset="180">
                     <div class="project-image bingocore">
                         <span></span>
@@ -508,8 +458,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Proyecto 6: SIRVI -->
                 <div class="project-card" data-aos="fade-up" data-aos-offset="200">
                     <div class="project-image sirviapp">
                         <span></span>
@@ -541,8 +489,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Proyecto 6: SIRVI -->
                 <div class="project-card" data-aos="fade-up" data-aos-offset="200">
                     <div class="project-image transforma">
                         <span></span>
@@ -575,8 +521,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- ----- SECCIÓN ESFERA 3D (ORIGINAL) ----- -->
         <section class="page_section" id="third_container" data-aos="fade-up">
             <section class="video-section" id="metalSphere">
                 <div id="sphereContainer">
@@ -585,13 +529,10 @@
                 <span class="light-line"></span>
             </section>
         </section>
-
-        <!-- ----- SECCIÓN CONTACTO ----- -->
         <section id="contacto" class="page_section" data-aos="fade-up">
             <div class="contact-header" data-aos="fade-down">
                 <h2>Trabajemos <span>Juntos</span></h2>
             </div>
-
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item" data-aos="fade-right" data-aos-delay="100">
@@ -601,7 +542,6 @@
                             <p>ferchosorio8@gmail.com</p>
                         </div>
                     </div>
-
                     <div class="contact-item" data-aos="fade-right" data-aos-delay="200">
                         <div class="contact-icon"><img src="resources/assets/images/svgs/smartphone.svg" alt="Phone"></div>
                         <div class="contact-details">
@@ -609,7 +549,6 @@
                             <p>+57 (310) 657 4835</p>
                         </div>
                     </div>
-
                     <div class="contact-item" data-aos="fade-right" data-aos-delay="300">
                         <div class="contact-icon"><img src="resources/assets/images/svgs/location.svg" alt="Location"></div>
                         <div class="contact-details">
@@ -617,7 +556,6 @@
                             <p>Colombia / Remoto</p>
                         </div>
                     </div>
-
                     <div class="contact-item" data-aos="fade-right" data-aos-delay="400">
                         <div class="contact-icon"><img src="resources/assets/images/svgs/user.svg" alt="User"></div>
                         <div class="contact-details">
@@ -626,7 +564,6 @@
                         </div>
                     </div>
                 </div>
-
                 <form class="contact-form" data-aos="fade-left" data-aos-delay="200">
                     <div class="form-group">
                         <label for="name">Nombre</label>
@@ -652,8 +589,6 @@
                 </form>
             </div>
         </section>
-
-        <!-- ----- FOOTER ----- -->
         <footer class="footer">
             <div class="footer-content">
                 <div class="footer-logo">CRYPTOCORE</div>

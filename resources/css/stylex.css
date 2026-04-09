@@ -1,9 +1,3 @@
-/* ============================================
-   CRYPTOCORE PORTFOLIO - CSS OPTIMIZADO
-   Responsive | Animaciones | Performance
-   ============================================ */
-
-/* ---------- VARIABLES CSS ---------- */
 :root {
     --green: #cef951;
     --green-dark: #a8d32a;
@@ -14,23 +8,19 @@
     --light-gray: #e0e0e0;
     --text-muted: #888888;
 
-    /* Tipografías */
     --font-display: 'Gexpanded', sans-serif;
     --font-heading: 'Alexana', sans-serif;
     --font-body: 'Montserrat', sans-serif;
     --font-accent: 'Poppins', sans-serif;
 
-    /* Breakpoints */
     --mobile: 640px;
     --tablet: 1024px;
     --desktop: 1440px;
 
-    /* Transiciones */
     --transition-smooth: all 0.5s cubic-bezier(1, 0, 0, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/* ---------- FUENTES ---------- */
 @font-face {
     font-family: Alexana;
     src: url(../assets/fonts/Alexana.ttf);
@@ -61,7 +51,6 @@
     font-display: swap;
 }
 
-/* ---------- RESET Y BASE ---------- */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -69,11 +58,10 @@
 }
 
 html {
-    scroll-behavior: auto; /* Lenis maneja el smooth scroll, no el navegador */
+    scroll-behavior: auto;
     font-size: 16px;
 }
 
-/* Lenis necesita que el html/body no tengan overflow oculto */
 html.lenis {
     height: auto;
 }
@@ -98,7 +86,6 @@ body {
     line-height: 1.6;
 }
 
-/* Scrollbar personalizado */
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -116,7 +103,6 @@ body {
     background-color: var(--green-dark);
 }
 
-/* ---------- BACKGROUNDS ---------- */
 body::after {
     content: "";
     position: fixed;
@@ -144,7 +130,6 @@ body::before {
     z-index: -1;
 }
 
-/* ---------- CONTENEDOR PRINCIPAL ---------- */
 .container {
     width: 100vw;
     height: auto;
@@ -153,10 +138,8 @@ body::before {
     align-items: center;
     justify-content: flex-start;
     overflow-x: hidden;
-    /* overflow: hidden eliminado — cortaba grids y elementos que desbordan */
 }
 
-/* ---------- SECCIONES ---------- */
 .page_section {
     width: 100%;
     min-height: 100vh;
@@ -166,13 +149,11 @@ body::before {
     justify-content: center;
     position: relative;
     padding: 2rem;
-    /* scroll-snap quitado: causa micro-lags con Lenis */
 }
 .page_section:nth-child(1) {
     min-height: 90vh;
 }
 
-/* Secciones con header + contenido: espaciado vertical correcto */
 #sobre-mi,
 #habilidades,
 #experiencia,
@@ -184,7 +165,6 @@ body::before {
     gap: 3rem;
 }
 
-/* ---------- NAVBAR ---------- */
 .DesktopNavBar {
     width: 100vw;
     height: clamp(80px, 15vh, 120px);
@@ -249,7 +229,6 @@ body::before {
     white-space: nowrap;
 }
 
-/* Links de navegación */
 .linkContainer {
     height: 100%;
     display: flex;
@@ -296,7 +275,6 @@ body::before {
     width: 100%;
 }
 
-/* Menú hamburguesa (mobile) */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -330,7 +308,6 @@ body::before {
     transform: rotate(-45deg) translate(7px, -6px);
 }
 
-/* ---------- SECCIÓN HERO ---------- */
 .hero-section {
     padding-top: 120px;
     flex-direction: column;
@@ -392,7 +369,6 @@ body::before {
     letter-spacing: clamp(10px, 2vw, 30px);
 }
 
-/* Canvas contenedor */
 #canvas-cont {
     opacity: 0;
     position: absolute;
@@ -409,7 +385,6 @@ body::before {
     transition: all 0.1s ease-in-out;
 }
 
-/* Tag decorativa */
 .tag {
     position: absolute;
     bottom: 20px;
@@ -426,7 +401,6 @@ body::before {
     opacity: 0.1;
 }
 
-/* Iconos sociales */
 .media-icons-container {
     display: flex;
     align-items: center;
@@ -464,10 +438,11 @@ body::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: var(--green);
+    background: var(--grey);
     transform: scale(0);
     transition: transform 0.3s ease;
     border-radius: 50%;
+    z-index: -1;
 }
 
 .media-icons-container a:hover::before {
@@ -491,7 +466,6 @@ body::before {
     fill: var(--dark-grey);
 }
 
-/* ---------- SECCIÓN ABOUT MEJORADA ---------- */
 #second-container {
     flex-direction: column;
     justify-content: center;
@@ -606,7 +580,6 @@ body::before {
     z-index: 0;
 }
 
-/* ---------- SECCIÓN SKILLS ---------- */
 #skills-section {
     background: var(--dark-grey);
     flex-direction: column;
@@ -726,7 +699,6 @@ body::before {
     letter-spacing: 1px;
 }
 
-/* ---------- SECCIÓN EXPERIENCIA ---------- */
 #experience-section {
     background: linear-gradient(180deg, var(--dark-grey) 0%, var(--darker) 100%);
     flex-direction: column;
@@ -832,7 +804,6 @@ body::before {
     line-height: 1.6;
 }
 
-/* ---------- SECCIÓN PROYECTOS ---------- */
 #projects-section {
     background: var(--darker);
     flex-direction: column;
@@ -989,7 +960,6 @@ body::before {
     font-size: 0.75rem;
 }
 
-/* ---------- SECCIÓN ESFERA (ORIGINAL) ---------- */
 .video-section {
     position: relative;
     width: 100%;
@@ -1037,7 +1007,6 @@ body::before {
     will-change: height, opacity;
 }
 
-/* ---------- SECCIÓN CONTACTO ---------- */
 #contact-section {
     background: var(--dark-grey);
     flex-direction: column;
@@ -1174,7 +1143,6 @@ body::before {
     box-shadow: 0 10px 30px rgba(206, 249, 81, 0.3);
 }
 
-/* ---------- FOOTER ---------- */
 .footer {
     background: var(--darker);
     padding: 3rem 2rem;
@@ -1231,7 +1199,6 @@ body::before {
     font-size: 10px;
 }
 
-/* ---------- ANIMACIONES ---------- */
 @keyframes setDown {
     to {
         top: 50%;
@@ -1260,9 +1227,6 @@ body::before {
     100% { background-position: 0% 50%; }
 }
 
-/* ---------- RESPONSIVE DESIGN ---------- */
-
-/* Tablet y desktop pequeño */
 @media screen and (max-width: 1024px) {
     .about-content {
         grid-template-columns: 1fr;
@@ -1304,7 +1268,6 @@ body::before {
     }
 }
 
-/* Móvil */
 @media screen and (max-width: 640px) {
     html {
         font-size: 14px;
@@ -1445,7 +1408,6 @@ body::before {
     }
 }
 
-/* Pantallas muy pequeñas */
 @media screen and (max-width: 380px) {
     .ini-text {
         font-size: 2rem;
@@ -1460,7 +1422,6 @@ body::before {
     }
 }
 
-/* Pantallas grandes */
 @media screen and (min-width: 1920px) {
     html {
         font-size: 18px;
@@ -1471,14 +1432,12 @@ body::before {
     }
 }
 
-/* Modo oscuro forzado (por si acaso) */
 @media (prefers-color-scheme: light) {
     body {
         background-color: var(--darker);
     }
 }
 
-/* Reducir animaciones para accesibilidad */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -1490,14 +1449,12 @@ body::before {
     }
 }
 
-/* ---------- UTILIDADES ---------- */
 .text-green { color: var(--green); }
 .text-white { color: var(--white); }
 .text-muted { color: var(--text-muted); }
 .bg-dark { background: var(--dark-grey); }
 .bg-darker { background: var(--darker); }
 
-/* Hidden utility */
 .hidden { display: none !important; }
 .sr-only {
     position: absolute;
