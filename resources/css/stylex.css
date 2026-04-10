@@ -1243,6 +1243,76 @@ body::before {
     font-size: 10px;
 }
 
+.customer-logo-container {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.customer-card {
+    width: 100px;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 10px;
+    overflow: visible;
+    border: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.customer-card::after {
+    content: "";
+    width: 110%;
+    height: 110%;
+    position: absolute;
+    display: flex;
+    z-index: -1;
+    background: inherit;
+    border-radius: 10px;
+    filter: blur(3px);
+}
+.sanmiguel {
+    background-image: url(../assets/images/sanmiguel.webp);
+}
+.maxpizza {
+    background-image: url(../assets/images/maxpizza.webp);
+}
+.cybersystems {
+    background-image: url(../assets/images/cybersystems.webp);
+}
+.transforma {
+    background-image: url(../assets/images/transforma.webp);
+}
+.phoenix {
+    background-image: url(../assets/images/phoenix.webp);
+}
+.piknik {
+    background-image: url(../assets/images/piknik.webp);
+}
+.tecnicell {
+    background-image: url(../assets/images/tecnicell.webp);
+}
+.maxsalud {
+    background-image: url(../assets/images/maxsalud.webp);
+}
+.markar {
+    background-image: url(../assets/images/markar.webp);
+}
+.miguelautos {
+    background-image: url(../assets/images/miguelautos.webp);
+}
+.valledelasorquideas {
+    background-image: url(../assets/images/valledelasorquideas.webp);
+}
+.colonialplaza {
+    background-image: url(../assets/images/colonialplaza.webp);
+}
+
 @keyframes setDown {
     to {
         top: 50%;
@@ -1352,6 +1422,14 @@ body::before {
 
     .programming-icons .icons-track {
         gap: 2rem;
+    }
+    
+    .customer-logo-container {
+        width: 90%;
+    }
+    
+    .customer-card {
+        width: 85px;
     }
 
     .sourceContainer.active {
