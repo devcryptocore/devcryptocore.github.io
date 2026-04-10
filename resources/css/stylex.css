@@ -516,15 +516,59 @@ body::before {
 }
 
 .about-stats {
+    width: 50%;
     display: flex;
     gap: 2rem;
     margin-top: 1rem;
+    overflow: hidden;
+}
+.about-stats img {
+    width: 60px;
+    aspect-ratio: 16/9;
+    object-fit: contain;
+    opacity: 0.5;
 }
 
 .stat-item {
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
+}
+
+.programming-icons {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    padding: 2rem 0;
+    background: var(--dark-grey);
+}
+
+.programming-icons .icons-track {
+    display: flex;
+    gap: 3rem;
+    animation: slideIcons 20s linear infinite;
+}
+
+.programming-icons img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.programming-icons img:hover {
+    opacity: 1;
+}
+
+@keyframes slideIcons {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 .stat-number {
@@ -1297,6 +1341,17 @@ body::before {
         transform: translateX(0);
         animation: none;
         padding: 2rem;
+    }
+    .programming-icons {
+        padding: 1rem;
+    }
+    .programming-icons img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .programming-icons .icons-track {
+        gap: 2rem;
     }
 
     .sourceContainer.active {
